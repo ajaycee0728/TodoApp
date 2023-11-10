@@ -1,0 +1,50 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+@use 'vuetify/settings' with (
+  $color-pack: false
+);
+
+#todo-form {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 80vh; 
+
+    .container-card {
+        height: 50rem;
+        width: 30rem;  
+    } 
+    
+    .header-card {   
+            .header-badge {
+                padding-bottom: 5px; 
+            }
+    }
+
+    .tasks-container {
+      height: 30rem !important;
+      overflow-y: auto;
+
+      .task-banner {
+        .delete {
+            opacity: 0; 
+            transition: opacity 0.3s;
+        }
+
+        &:hover {
+            .delete {
+                opacity: 1;
+            }
+        }
+
+        .done {
+          text-decoration: line-through;
+        } 
+      } 
+    }
+}
